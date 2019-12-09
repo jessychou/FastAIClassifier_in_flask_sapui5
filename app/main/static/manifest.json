@@ -1,0 +1,133 @@
+{
+	"_version": "1.12.0",
+	"sap.app": {
+		"id": "mma.Meeting_Minutes_Assistant",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"sourceTemplate": {
+			"id": "ui5template.basicSAPUI5ApplicationProject",
+			"version": "1.40.12"
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		}
+	},
+	"sap.ui5": {
+		"flexEnabled": false,
+		"config": {
+			"reportingId": "Meeting Minutes Assistant",
+			"sample": {
+				"stretch": true,
+				"files": [
+					"view/ObjectPageSection.view.xml",
+					"../SharedBlocks/BlockBlueT1.js",
+					"../SharedBlocks/BlockBlueT1.view.xml",
+					"../SharedBlocks/BlockBlueT2.js",
+					"../SharedBlocks/BlockBlueT2.view.xml",
+					"../SharedBlocks/BlockBlueT3.js",
+					"../SharedBlocks/BlockBlueT3.view.xml",
+					"../SharedBlocks/BlockBlueT4.js",
+					"../SharedBlocks/BlockBlueT4.view.xml",
+					"../SharedBlocks/BlockBlueT5.js",
+					"../SharedBlocks/BlockBlueT5.view.xml"
+				]
+			}
+
+
+		},
+		"rootView": {
+			"viewName": "mma.Meeting_Minutes_Assistant.view.App",
+			"type": "XML",
+			"async": true,
+			"id": "App"
+		},
+		"dependencies": {
+			"minUI5Version": "1.60.1",
+			"libs": {
+				"sap.ui.layout": {},
+				"sap.ui.unified": {},
+				"sap.ui.core": {},
+				"sap.m": {},
+				"sap.f": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "mma.Meeting_Minutes_Assistant.i18n.i18n"
+				}
+			},
+			"KeynotesandTasks": {
+				"type": "sap.ui.model.json.JSONModel",
+				"uri": "mockdata/keynotes.json"
+			},
+			"AddressBook": {
+				"type": "sap.ui.model.json.JSONModel",
+				"uri": "mockdata/addressbook.json"
+			},
+			"NLP_Result": {
+				"type": "sap.ui.model.json.JSONModel"
+			}
+		},
+		"resources": {
+			"css": [
+				{
+					"uri": "css/style.css"
+				}
+			]
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"async": true,
+				"viewPath": "mma.Meeting_Minutes_Assistant.view",
+				"controlAggregation": "pages",
+				"bypassed": {
+					"target": [
+						"notFound"
+					]
+				},
+				"controlId": "app",
+				"clearControlAggregation": false
+			},
+			"routes": [
+				{
+					"pattern": "fishPhoto_Upload",
+					"name": "fishPhoto_Upload",
+					"target": "fishPhoto_Upload"
+				}
+			],
+			"targets": {
+				"fishPhoto_Upload": {
+					"viewName": "FishPhoto_Upload",
+					"viewId": "fishPhoto_Upload",
+					"transition": "slide"
+				}
+			}
+		}
+	}
+}

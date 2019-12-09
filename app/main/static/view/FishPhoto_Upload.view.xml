@@ -1,0 +1,108 @@
+<mvc:View
+		xmlns:mvc="sap.ui.core.mvc"
+		xmlns="sap.m"
+		xmlns:unified="sap.ui.unified"
+		class="viewPadding"
+		controllerName="mma.Meeting_Minutes_Assistant.controller.FishPhoto_Upload">
+	<App>
+		<pages>
+			<Page xmlns="sap.m"
+				  title="Save Baby Shark"
+                  titleStyle="H2"
+				  showHeader="false"
+				  showNavButton="false"
+				  enableScrolling="true"
+				  class="sapUiContentPadding">
+				<landmarkInfo>
+					<PageAccessibleLandmarkInfo rootRole="Main"
+												rootLabel="{i18n>landmarkAudioFileMainPage}"
+												contentRole="Region"
+												contentLabel="{i18n>landmarkContent}"
+												footerLabel="{i18n>landmarkFooter}"
+												headerRole="Region"
+												headerLabel="{i18n>appTitle}"/>
+				</landmarkInfo>
+				<content>
+
+					<FlexBox xmlns="sap.m"
+							 height="100px"
+							 alignItems="Center"
+							 justifyContent="Center">
+						<items>
+<!--							<Image visible="{= !${device>/system/phone} }"-->
+<!--								   src="resources/282497_Headphones_R_orange_1.png"-->
+<!--								   width="100%"-->
+<!--								   tooltip="{i18n>appDescription}"/>-->
+							<Title xmlns="sap.m"
+								   text="Save Baby Shark"
+								   level="H1"/>
+<!--							<Image visible="{= !${device>/system/phone} }"-->
+<!--								   src="resources/283138_Balance-sheet-vertical_R_orange_1.png"-->
+<!--								   width="100%"-->
+<!--								   tooltip="{i18n>appDescription}"/>-->
+						</items>
+					</FlexBox>
+					<FlexBox xmlns="sap.m"
+							 height="50px"
+							 alignItems="Center"
+							 justifyContent="Center" id="kkfileUploader">
+						<items>
+							<Title text="Image Upload"
+								   titleStyle="H3"
+								   width="auto"
+								   textAlign="Begin"
+								   visible="true"
+								   wrapping="false"
+								   class="sapUiTinyMargin"/>
+							<unified:FileUploader id="fileUploader"
+												  buttonText="Browse"
+												  style="Emphasized"
+												  buttonOnly="false"
+												  enabled="true"
+												  width="465px"
+												  tooltip="Upload your image to application"
+												  iconFirst="true"
+												  uploadOnChange="true"
+												  fileType="jpg"
+												  change="_onFileUploaderChange"
+												  placeholder="Choose a jpg file to Upload..."
+												  uploadComplete="_onFileUploaderUploadComplete"
+												  sendXHR="true"
+												  uploadProgress="_onFileUploaderUploadProgress"
+												  typeMissmatch="_onFileUploaderTypeMissmatch"
+												  fileSizeExceed="_onFileUploaderFileSizeExceed"
+												  class="sapUiSmallMarginEnd">
+								<unified:xhrSettings/>
+							</unified:FileUploader>
+						</items>
+					</FlexBox>
+
+					<FlexBox xmlns="sap.m"
+							 alignItems="Center"
+							 justifyContent="Center"
+                             id="loading_flex"
+                             direction="Column">
+						<items>
+							<Image id="loading"
+								   src="resources/loading.gif"
+								   width="100%"
+								   tooltip="{i18n>appDescription}"/>
+						</items>
+					</FlexBox>
+
+                    <FlexBox xmlns="sap.m"
+							 alignItems="Center"
+							 justifyContent="Center"
+                             id="image_flex"
+                             direction="Column">
+						<items>
+
+						</items>
+					</FlexBox>
+
+
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
