@@ -5,7 +5,7 @@ from flask import request, Flask
 from flask_restplus import Resource
 
 # from app.main.util.decorator import admin_token_required
-from ..util.dto import NLPDto, authenticate
+from ..util.dto import NLPDto
 from ..service.nlp_service import get_image_result
 from ..util.file_parser import nlp_caption_file_upload as parser
 from ..util.file_parser import fish_upload as fishparser

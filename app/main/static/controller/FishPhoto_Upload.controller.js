@@ -15,9 +15,8 @@ sap.ui.define([
 	"mma/Meeting_Minutes_Assistant/model/CommonUtils",
 	 "jquery.sap.global",
 	"sap/m/library",
-	"mma/Meeting_Minutes_Assistant/model/download",
 
-], function (jQuery, Filter, Controller, UIComponent, UploadCollectionParameter, TextArea, Label, Dialog, Text, Button, JSONModel, MessageToast, Fragment, CommonUtils, mobileLibrary, download) {
+], function (jQuery, Filter, Controller, UIComponent, UploadCollectionParameter, TextArea, Label, Dialog, Text, Button, JSONModel, MessageToast, Fragment, CommonUtils, mobileLibrary) {
 	"use strict";
 
 	 var storageType = jQuery.sap.storage.Type.local;

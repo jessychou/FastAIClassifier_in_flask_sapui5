@@ -2,10 +2,9 @@ sap.ui.define([
     "sap/m/MessageBox",
 	"sap/ui/model/json/JSONModel",
 	"mma/Meeting_Minutes_Assistant/model/CommonUtils",
-	"mma/Meeting_Minutes_Assistant/model/Undoredo",
 	"sap/m/Dialog",
 	"sap/m/Button"
-], function (MessageBox, JSONModel, CommonUtils, Undoredo, Dialog, Button) {
+], function (MessageBox, JSONModel, CommonUtils, Dialog, Button) {
     "use strict";
 
     return {

@@ -5,7 +5,6 @@ from flask_bcrypt import Bcrypt
 from .config import config_by_name
 import os
 import json
-from hdbcli import dbapi
 
 db = SQLAlchemy()
 flask_bcrypt = Bcrypt()
